@@ -1,0 +1,41 @@
+.features{
+    // background-color: $color-grey-light-2; was used for development reasons
+    grid-column: center-start / center-end;
+
+    margin: 15rem 0;
+
+    @media only screen and (max-width: $bp-medium){
+        margin: 9rem 0;
+    }
+
+    @media only screen and (max-width: $bp-small){
+        margin: 7rem 0;
+    } 
+
+    display: grid;
+    // grid-template-columns: repeat(3, 1fr); // written for development reasons
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));  //it should fit as many as possible, while one column is never smaller than 25rem
+    // grid-template-rows: auto auto;     //defining rows is not needed because implicit grid gonna be formed
+    
+    grid-gap: 6rem;
+    align-items: start;
+}
+
+.feature{
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 2.5rem;
+    
+    &__icon{
+        fill: $color-primary;
+        width: 4.5rem;
+        height: 4.5rem;
+        grid-row: 1 / span 2;
+        transform: translateY(-1rem);
+    }
+
+    &__text{
+        font-size: 1.7rem;
+    }
+}
